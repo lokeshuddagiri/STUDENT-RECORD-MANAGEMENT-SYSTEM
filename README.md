@@ -111,5 +111,3 @@ gcc -Wall -Wextra -std=c11 main.c student.c file.c search.c modify.c sort.c dele
 ## Author
 
 **Lokesh Uddagiri**
-
-GitHub: [https://github.com/lokeshuddagiri](https://github.com/lokeshuddagiri)
