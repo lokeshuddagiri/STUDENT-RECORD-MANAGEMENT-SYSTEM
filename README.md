@@ -1,118 +1,112 @@
-# Student Record Management System (C)
+# Student Record Management System
 
-A console-based Student Record Management System written in C. It stores student records dynamically in a singly linked list and uses file handling to preserve records between program runs.
-
-## Student Information
-
-Each student record contains:
-
-- Roll Number (`int`)
-- Student Name (`char[50]`)
-- Percentage (`float`)
-- Pointer to the next node (`struct t *next`)
-
-## Features
-
-- Add a student at the beginning, at a specified position, or at the end
-- Display all student records
-- Delete a student by position, roll number, or name
-- Search for a student by roll number or name
-- Modify student details using roll number or name
-- Sort records by roll number (ascending or descending)
-- Sort records by percentage or name
-- Load student records from a file
-- Save student records to a file
-- Automatically generate the smallest available positive roll number
+A console-based Student Record Management System developed in C. It uses a singly linked list to manage student records dynamically and file handling to store data between runs.
 
 ## Project Structure
 
 ```
-Student-Record-Management-System/
-├── slleee.c
-├── README.md
-└── .gitignore
+cpro/
+│
+├── main.c
+├── student.h
+├── student.c
+├── file.c
+├── search.c
+├── modify.c
+├── sort.c
+├── delete.c
+└── student2.dat
 ```
 
-## Requirements
+## File Description
 
+| File          | Description                                         |
+|---------------|-----------------------------------------------------|
+| `main.c`      | Main function and menu-driven interface             |
+| `student.h`   | Structure definition and function declarations      |
+| `student.c`   | Student record and linked-list operations           |
+| `file.c`      | File handling: saving and loading records           |
+| `search.c`    | Searching student records                           |
+| `modify.c`    | Modifying student details                           |
+| `sort.c`      | Sorting student records                             |
+| `delete.c`    | Deleting student records                            |
+| `student2.dat`| File used to store student records                  |
+
+## Features
+
+- Add student records
+- Display all student records
+- Delete records
+- Search students by roll number or name
+- Modify student details
+- Sort records by roll number
+- Sort records by percentage
+- Sort records alphabetically by name
+- Save student records to a file
+- Load previously saved records
+- Automatically generate available roll numbers
+
+## Technologies Used
+
+- C programming
 - GCC compiler
-- Linux, macOS, or Windows with MinGW
+- Linux
+- Singly linked list
+- Structures and pointers
+- Dynamic memory allocation
+- File handling
+- Functions
+- Searching and sorting algorithms
 
 ## Compilation
 
+Navigate to the project directory:
+
 ```bash
-gcc -Wall -Wextra slleee.c -o student_record
+cd ~/cpro
+```
+
+Compile all source files:
+
+```bash
+gcc -Wall -Wextra -std=c11 main.c student.c file.c search.c modify.c sort.c delete.c -o studentdb
 ```
 
 ## Execution
 
-On Linux / macOS:
-
 ```bash
-./student_record
+./studentdb
 ```
 
-On Windows:
+## Concepts Implemented
 
-```bash
-student_record.exe
-```
+1. Structures
+2. Pointers
+3. Singly linked lists
+4. Dynamic memory allocation (`malloc`, `free`)
+5. File operations (`fopen`, `fclose`, `fscanf`, `fprintf`)
+6. String handling
+7. Searching techniques
+8. Sorting techniques
+9. Modular programming using header and source files
 
-The program reads student records from `student2.dat` when it starts and saves records to the same file.
+## Learning Objectives
 
-## Data File Format
-
-Records are stored in `student2.dat`. Each line contains:
-
-```
-roll_number name percentage
-```
-
-Example:
-
-```
-1 Lokesh 85.50
-2 Ravi 78.00
-3 Kiran 90.00
-```
-
-> **Note:** The current implementation reads names with `%s`, so names containing spaces are not supported.
-
-## Concepts Used
-
-- Structures and pointers
-- Singly linked lists
-- Dynamic memory allocation (`malloc`, `free`)
-- File handling (`fopen`, `fscanf`, `fprintf`, `fclose`)
-- String handling (`strcmp`, `strcpy`)
-- Searching and sorting
-- Functions
-- Switch-case statements
-
-## Known Issues
-
-The current source code should be reviewed and improved before being considered a finished release.
-
-1. Replace `void main()` with the standard `int main(void)`.
-2. Initialize and validate the menu variable before using it.
-3. Check the return value of every `malloc()` call.
-4. Initialize the `next` pointer of every newly allocated node.
-5. Validate positions before inserting records.
-6. Correct the descending percentage sorting condition in `shortpd()`.
-7. Add menu options for search, modify, and delete operations.
-8. Free all remaining linked-list nodes before program termination.
-9. Validate user input and percentage values.
-10. Support student names containing spaces.
+- Understand linked-list implementation in C
+- Learn how to divide a large C program into multiple source files
+- Understand header files and function declarations
+- Practise dynamic memory allocation
+- Implement file-based data persistence
+- Improve problem-solving and programming skills
 
 ## Future Improvements
 
-- Divide the program into multiple source and header files
-- Improve input validation
-- Support full names with spaces
-- Prevent duplicate roll numbers during file loading
-- Improve sorting efficiency
-- Add test cases for all operations
-- Improve the user interface
+- Support student names containing spaces
+- Improve input validation and error handling
+- Prevent duplicate records
+- Add more sorting and searching options
+- Improve the menu interface
+- Add student record backup and recovery
 
 ## Author
 
